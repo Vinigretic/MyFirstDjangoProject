@@ -12,12 +12,17 @@ from firstapp import views # импорт из приложения
 #     path('registred/', views.registred),
 # ]
 
+# urlpatterns = [
+#     path('products/', views.products),
+#     path('products/<int:product_id>/', views.products),
+#     path('users/', views.users),
+#     path('users/<int:id>/<name>/', views.users),
+#     path('contacts/', views.contacts),
+#     path('contacts/<int:id>/<name>/<phone_number>/', views.contacts),
+#     path('admin/', admin.site.urls),
+# ]
+
 urlpatterns = [
-    path('products/', views.products),
     path('products/<int:product_id>/', views.products),
-    path('users/', views.users),
-    path('users/<int:id>/<name>/', views.users),
-    path('contacts/', views.contacts),
-    path('contacts/<int:id>/<name>/<phone_number>/', views.contacts),
-    path('admin/', admin.site.urls),
+    path('users/', views.users)
 ]
