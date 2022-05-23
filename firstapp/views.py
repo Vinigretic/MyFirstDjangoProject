@@ -34,13 +34,27 @@ from django.http import HttpResponse
 #     output = f'<h1>Contacts page</h1> <h2>id:{id}</h2> <p>name:{name}, phone_number:{phone_number} </p>'
 #     return HttpResponse(output)
 
-def products(request, product_id):
-    category = request.GET.get('cat', '')
-    output = f'<h2>Product number</h2> <p>id:{product_id}, category:{category}</p>'
-    return HttpResponse(output)
+# def products(request, product_id):
+#     category = request.GET.get('cat', '')
+#     output = f'<h2>Product number</h2> <p>id:{product_id}, category:{category}</p>'
+#     return HttpResponse(output)
+#
+# def users(request):
+#     id = request.GET.get('id', 1)
+#     name = request.GET.get('name', 'Alina')
+#     output = f'<h2>User info</h2> <p>id:{id}, name:{name}</p>'
+#     return HttpResponse(output)
 
-def users(request):
-    id = request.GET.get('id', 1)
-    name = request.GET.get('name', 'Alina')
-    output = f'<h2>User info</h2> <p>id:{id}, name:{name}</p>'
+# Описати сторінку покупки продукту з параметрами ціна та строковими параметрами нейм юсера, ід
+# юзера, нейм товару, айді товару, прайс доставки.
+
+def orders(request, price):
+    order_id = request.GET.get('o_id', '')
+    user_name = request.GET.get('u_name', '')
+    user_id = request.GET.get('u_id', '')
+    product_name = request.GET.get('p_name', '')
+    product_id = request.GET.get('p_id', '')
+    price_delivery = request.GET.get('prise_del', '')
+    output = f'<h1>Order number: {order_id}</h1> <p>user name:{user_name}, user_id{user_id}, ' \
+             f'product name: {product_name}, product id:{product_id}, price delivery: {price_delivery}</p>'
     return HttpResponse(output)

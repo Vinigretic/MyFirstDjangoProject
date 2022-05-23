@@ -9,3 +9,4 @@
                                              # второй параметр всегда ставим по умолчанию пустую строку
 #     output = f'<h2>Product number</h2> <p>id:{product_id}, category:{category}</p>'
 #     return HttpResponse(output)
+
