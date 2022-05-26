@@ -27,7 +27,14 @@ from firstapp import views # импорт из приложения
 #     path('users/', views.users)
 # ]
 
+# urlpatterns = [
+#     path('orders/<int:price>/', views.orders),
+#     path('admin/', admin.site.urls)
+# ]
+
 urlpatterns = [
-    path('orders/<int:price>/', views.orders),
-    path('admin/', admin.site.urls)
+    path('', views.index),
+    path('about/', views.about),
+    path('contact/', views.contact),
+    path('details/', views.details)
 ]

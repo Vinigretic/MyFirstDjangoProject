@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 
 
 # def index(request):
@@ -48,13 +48,25 @@ from django.http import HttpResponse
 # Описати сторінку покупки продукту з параметрами ціна та строковими параметрами нейм юсера, ід
 # юзера, нейм товару, айді товару, прайс доставки.
 
-def orders(request, price):
-    order_id = request.GET.get('o_id', '')
-    user_name = request.GET.get('u_name', '')
-    user_id = request.GET.get('u_id', '')
-    product_name = request.GET.get('p_name', '')
-    product_id = request.GET.get('p_id', '')
-    price_delivery = request.GET.get('prise_del', '')
-    output = f'<h1>Order number: {order_id}</h1> <p>user name:{user_name}, user_id{user_id}, ' \
-             f'product name: {product_name}, product id:{product_id}, price delivery: {price_delivery}</p>'
-    return HttpResponse(output)
+# def orders(request, price):
+#     order_id = request.GET.get('o_id', '')
+#     user_name = request.GET.get('u_name', '')
+#     user_id = request.GET.get('u_id', '')
+#     product_name = request.GET.get('p_name', '')
+#     product_id = request.GET.get('p_id', '')
+#     price_delivery = request.GET.get('prise_del', '')
+#     output = f'<h1>Order number: {order_id}</h1> <p>user name:{user_name}, user_id{user_id}, ' \
+#              f'product name: {product_name}, product id:{product_id}, price delivery: {price_delivery}</p>'
+#     return HttpResponse(output)
+
+def index(request):
+    return HttpResponse('index')
+
+def about(request):
+    return HttpResponse('about')
+
+def contact(request):
+    return HttpResponseRedirect('/about')
+
+def details(request):
+    return HttpResponsePermanentRedirect('/')
