@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from firstapp import views # импорт из приложения
+from firstapp import views as views_firstapp # импорт из приложения
+from shops import views as views_shops
 
 # urlpatterns = [
 #     path('', views.index, name='home'),
@@ -40,9 +41,13 @@ from firstapp import views # импорт из приложения
 # ]
 
 urlpatterns = [
-    path('', views.index),
-    path('home/', views.home),
-    path('about/', views.about)
+    path('', views_firstapp.index),
+    path('home/', views_firstapp.home),
+    path('about/', views_firstapp.about),
+    path('shops/user/', views_shops.user),
+    path('shops/contacts/', views_shops.contacts),
+    path('shops/products/', views_shops.products),
+
 
 ]
 

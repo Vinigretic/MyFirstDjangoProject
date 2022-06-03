@@ -80,3 +80,4 @@ def home(request):
 
 def about(request):
     return TemplateResponse(request, 'firstapp/about.html')
+
