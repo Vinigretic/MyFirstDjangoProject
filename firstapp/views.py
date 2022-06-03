@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
+from django.template.response import TemplateResponse
 
 
 # def index(request):
@@ -59,14 +60,23 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanen
 #              f'product name: {product_name}, product id:{product_id}, price delivery: {price_delivery}</p>'
 #     return HttpResponse(output)
 
+# def index(request):
+#     return HttpResponse('index')
+#
+# def about(request):
+#     return HttpResponse('about')
+#
+# def contact(request):
+#     return HttpResponseRedirect('/about')
+#
+# def details(request):
+#     return HttpResponsePermanentRedirect('/')
+
 def index(request):
-    return HttpResponse('index')
+    return render(request, 'index.html')
+
+def home(request):
+    return render(request, 'firstapp/home.html')
 
 def about(request):
-    return HttpResponse('about')
-
-def contact(request):
-    return HttpResponseRedirect('/about')
-
-def details(request):
-    return HttpResponsePermanentRedirect('/')
+    return TemplateResponse(request, 'firstapp/about.html')
