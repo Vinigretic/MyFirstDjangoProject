@@ -40,14 +40,21 @@ from shops import views as views_shops
 #     path('details/', views.details)
 # ]
 
+# urlpatterns = [
+#     path('', views_firstapp.index),
+#     path('home/', views_firstapp.home),
+#     path('about/', views_firstapp.about),
+#     path('shops/user/', views_shops.user),
+#     path('shops/contacts/', views_shops.contacts),
+#     path('shops/products/', views_shops.products),
+#
+#
+# ]
+
+# urlpatterns = [
+#     path('', views_firstapp.index),
+# ]
+
 urlpatterns = [
-    path('', views_firstapp.index),
-    path('home/', views_firstapp.home),
-    path('about/', views_firstapp.about),
-    path('shops/user/', views_shops.user),
-    path('shops/contacts/', views_shops.contacts),
-    path('shops/products/', views_shops.products),
-
-
+    path('user/', views_shops.user)
 ]
-

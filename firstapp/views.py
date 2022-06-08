@@ -72,12 +72,35 @@ from django.template.response import TemplateResponse
 # def details(request):
 #     return HttpResponsePermanentRedirect('/')
 
+# def index(request):
+#     return render(request, 'index.html')
+#
+# def home(request):
+#     return render(request, 'firstapp/home.html')
+#
+# def about(request):
+#     return TemplateResponse(request, 'firstapp/about.html')
+
+# def index(request):
+#     data = {
+#         'header': 'it is index page header',
+#         'message': 'Welcome to my index page'
+#     }
+#     return render(request, 'index.html', context=data)
+
 def index(request):
-    return render(request, 'index.html')
+    header = 'Personal Data'
+    langs = ['Ukrainian, English', 'German','French']
+    user = {
+        'name': 'Dima',
+        'age': 25,
+    }
+    address = ('Абрикосовая', 23, 2)
 
-def home(request):
-    return render(request, 'firstapp/home.html')
-
-def about(request):
-    return TemplateResponse(request, 'firstapp/about.html')
-
+    data = {
+        'header': header,
+        'langs': langs,
+        'user': user,
+        'address': address
+    }
+    return render(request, 'index.html', context=data)

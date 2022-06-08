@@ -5,7 +5,9 @@
     <title>Index page</title>
 </head>
 <body>
-    <h1>Welcome to my Django project</h1>
-
+    <h2>{{ header }}</h2>
+    <p>Langs: {{ langs.0 }}, {{ langs.1 }}, {{ langs.2 }}, {{ langs.3 }} </p>
+    <p>Name: {{ user.name }}, age: {{ user.age }} </p>
+    <p>Address: street {{ address.0 }}, house {{ address.1 }}, flat {{ address.2 }}</p>
 </body>
 </html>

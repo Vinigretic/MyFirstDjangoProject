@@ -5,6 +5,10 @@
     <title>Users</title>
 </head>
 <body>
-    <h1>Users</h1>
+    <h2>{{ header }}</h2>
+    <p>Last name: {{ user.last_name }}, First name: {{ user.first_name }}, age: {{ user.age }}, city: {{ user.city }},
+    address: {{ user.address }}, status: {{ user.status }}</p>
+    <p>Parameters: growth - {{ parameters.0 }}, weight - {{ parameters.1 }} </p>
+    <p>Salary: {{ salary }}</p>
 </body>
 </html>
