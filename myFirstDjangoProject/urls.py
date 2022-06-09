@@ -54,7 +54,11 @@ from shops import views as views_shops
 # urlpatterns = [
 #     path('', views_firstapp.index),
 # ]
+#
+# urlpatterns = [
+#     path('user/', views_shops.user)
+# ]
 
 urlpatterns = [
-    path('user/', views_shops.user)
+    path('', views_firstapp.index)
 ]

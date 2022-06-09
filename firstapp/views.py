@@ -88,19 +88,22 @@ from django.template.response import TemplateResponse
 #     }
 #     return render(request, 'index.html', context=data)
 
-def index(request):
-    header = 'Personal Data'
-    langs = ['Ukrainian, English', 'German','French']
-    user = {
-        'name': 'Dima',
-        'age': 25,
-    }
-    address = ('Абрикосовая', 23, 2)
+# def index(request):
+#     header = 'Personal Data'
+#     langs = ['Ukrainian, English', 'German','French']
+#     user = {
+#         'name': 'Dima',
+#         'age': 25,
+#     }
+#     address = ('Абрикосовая', 23, 2)
+#
+#     data = {
+#         'header': header,
+#         'langs': langs,
+#         'user': user,
+#         'address': address
+#     }
+#     return render(request, 'index.html', context=data)
 
-    data = {
-        'header': header,
-        'langs': langs,
-        'user': user,
-        'address': address
-    }
-    return render(request, 'index.html', context=data)
+def index(request):
+    return render(request, 'index.html')

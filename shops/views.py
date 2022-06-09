@@ -10,23 +10,23 @@ from django.template.response import TemplateResponse
 # def products(request):
 #     return TemplateResponse(request, 'shops/products.html')
 
-def user(request):
-    header = 'Personal data'
-    user = {
-        'last_name':'Petrov',
-        'first_name':'Ivan',
-        'age':35,
-        'city':'Lviv',
-        'address':'вул. Степана Бандери, буд. 6, кв. 16',
-        'status':'is married'
-    }
-    parameters = (185, 85)
-    salary = 30000
-
-    data = {
-        'header':header,
-        'user':user,
-        'parameters':parameters,
-        'salary':salary
-    }
-    return render(request, 'shops/user.html', context=data)
+# def user(request):
+#     header = 'Personal data'
+#     user = {
+#         'last_name':'Petrov',
+#         'first_name':'Ivan',
+#         'age':35,
+#         'city':'Lviv',
+#         'address':'вул. Степана Бандери, буд. 6, кв. 16',
+#         'status':'is married'
+#     }
+#     parameters = (185, 85)
+#     salary = 30000
+#
+#     data = {
+#         'header':header,
+#         'user':user,
+#         'parameters':parameters,
+#         'salary':salary
+#     }
+#     return render(request, 'shops/user.html', context=data)
