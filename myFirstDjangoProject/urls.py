@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from firstapp import views as views_firstapp # импорт из приложения
 from shops import views as views_shops
+from django.views.generic import TemplateView
 
 # urlpatterns = [
 #     path('', views.index, name='home'),
@@ -59,6 +60,10 @@ from shops import views as views_shops
 #     path('user/', views_shops.user)
 # ]
 
+# urlpatterns = [
+#     path('', views_firstapp.index)
+# ]
+
 urlpatterns = [
-    path('', views_firstapp.index)
+    path('info/', TemplateView.as_view(template_name='firstapp/info.html', extra_context={'header':'header info'}))
 ]

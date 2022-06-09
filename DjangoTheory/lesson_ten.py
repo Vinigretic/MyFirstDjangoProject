@@ -32,3 +32,18 @@
 # urlpatterns = [
 #     path('', views_firstapp.index)
 # ]
+
+# class TemplateView
+# С помощью этого класса мы можем генерировать свои views  в url
+# Для этого в url импортируем этот класс
+# from django.views.generic import TemplateView
+# В url описываем путь к нужному HTML файлу
+# Так же с помощью параметра extra_context мы можем передавать переменные в HTML файл
+# extra_context - работает только со словарем
+
+# urlpatterns = [
+#     path('info/', TemplateView.as_view(template_name='firstapp/info.html', extra_context={'header':'header info'}))
+# ]
+
+# передача переменной в HTML
+# <h2>{{ header }}</h2>
