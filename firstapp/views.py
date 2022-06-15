@@ -105,5 +105,5 @@ from django.template.response import TemplateResponse
 #     }
 #     return render(request, 'index.html', context=data)
 
-def index(request):
-    return render(request, 'index.html')
+# def index(request):
+#     return render(request, 'index.html')

@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% block title %} Index page {% endblock title %}
+{% block header %} Главная страница {% endblock header %} <!-- эти строки кода выполняются и прописываются в
+первую очередь в коде HTML-->
+
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
 <!--<head>-->
@@ -12,16 +17,18 @@
 <!--</body>-->
 <!--</html>-->
 
-<!DOCTYPE html>
-{% load static %} <!-- подключаем статические файлы -->
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    <title>Index page</title>
-</head>
-<body>
-    <h1>My beautiful cat</h1>
-    <img src="{% static 'images/1560329641_2.jpg'%}" alt='Picture is not open'>
-</body>
-</html>
+<!--<!DOCTYPE html>-->
+<!--{% load static %} &lt;!&ndash; подключаем статические файлы &ndash;&gt;-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" href="{% static 'css/style.css'%}">-->
+<!--    <title>Index page</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>My beautiful cat</h1>-->
+<!--    <img src="{% static 'images/1560329641_2.jpg'%}" alt='Picture is not open'>-->
+<!--</body>-->
+<!--</html>-->
+
+

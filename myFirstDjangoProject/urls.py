@@ -64,6 +64,14 @@ from django.views.generic import TemplateView
 #     path('', views_firstapp.index)
 # ]
 
+# urlpatterns = [
+#     path('info/', TemplateView.as_view(template_name='firstapp/info.html', extra_context={'header':'header info'}))
+# ]
+
+# urlpatterns = [
+#     path('', TemplateView.as_view(template_name='index.html'))
+# ]
+
 urlpatterns = [
-    path('info/', TemplateView.as_view(template_name='firstapp/info.html', extra_context={'header':'header info'}))
+    path('', TemplateView.as_view(template_name='firstapp/about.html'))
 ]
