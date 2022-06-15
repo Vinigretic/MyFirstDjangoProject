@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'firstapp.apps.FirstappConfig',
     'shops.apps.ShopsConfig',
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [

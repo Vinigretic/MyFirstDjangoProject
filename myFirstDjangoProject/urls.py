@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path
 from firstapp import views as views_firstapp # импорт из приложения
 from shops import views as views_shops
+
+
 from django.views.generic import TemplateView
 
 # urlpatterns = [
@@ -72,6 +74,12 @@ from django.views.generic import TemplateView
 #     path('', TemplateView.as_view(template_name='index.html'))
 # ]
 
+# urlpatterns = [
+#     path('', TemplateView.as_view(template_name='firstapp/about.html'))
+# ]
+
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='firstapp/about.html'))
+    path('user/about', TemplateView.as_view(template_name='user/about_user.html')),
+    path('user/refactor', TemplateView.as_view(template_name='user/refactor_user.html')),
+    path('user/delete', TemplateView.as_view(template_name='user/delete_user.html'))
 ]
