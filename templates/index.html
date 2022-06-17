@@ -1,7 +1,4 @@
-{% extends 'base.html' %}
-{% block title %} Index page {% endblock title %}
-{% block header %} Главная страница {% endblock header %} <!-- эти строки кода выполняются и прописываются в
-первую очередь в коде HTML-->
+
 
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
@@ -30,5 +27,38 @@
 <!--    <img src="{% static 'images/1560329641_2.jpg'%}" alt='Picture is not open'>-->
 <!--</body>-->
 <!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index page</title>
+</head>
+<body>
+<!--    <p>{% now 'Y' %}</p>-->
+<!--    <p>{% now 'F j Y' %}</p>-->
+<!--    <p>{% now 'F j, Y, P' %}</p>-->
+<!--    {% if n > 0 %}-->
+<!--        <p>Число положительное</p>-->
+<!--    {% elif n < -10 %}-->
+<!--        <p>Число меньше -10</p>-->
+<!--    {% else %}-->
+<!--        <p>Число в диапазоне от 0 до -10</p>-->
+<!--    {% endif %}-->
+<!--    <ul>-->
+<!--        {% for i in test %}-->
+<!--        <li>{{ i }}</li>-->
+<!--        {% empty %}-->
+<!--        <li>Нет значения</li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+    {% with name='Nina' age=29 %}
+        <div>
+            <p>Name: {{ name }}</p>
+            <p>Age: {{ age }}</p>
+        </div>
+    {% endwith %}
+</body>
+
+</html>
 
 

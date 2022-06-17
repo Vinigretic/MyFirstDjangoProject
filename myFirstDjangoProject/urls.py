@@ -78,8 +78,16 @@ from django.views.generic import TemplateView
 #     path('', TemplateView.as_view(template_name='firstapp/about.html'))
 # ]
 
+# urlpatterns = [
+#     path('user/about', TemplateView.as_view(template_name='user/about_user.html')),
+#     path('user/refactor', TemplateView.as_view(template_name='user/refactor_user.html')),
+#     path('user/delete', TemplateView.as_view(template_name='user/delete_user.html'))
+# ]
+
+# urlpatterns = [
+#     path('', views_firstapp.index)
+# ]
+
 urlpatterns = [
-    path('user/about', TemplateView.as_view(template_name='user/about_user.html')),
-    path('user/refactor', TemplateView.as_view(template_name='user/refactor_user.html')),
-    path('user/delete', TemplateView.as_view(template_name='user/delete_user.html'))
+    path('', TemplateView.as_view(template_name='index.html'))
 ]

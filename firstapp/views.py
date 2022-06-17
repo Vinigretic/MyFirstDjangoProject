@@ -107,3 +107,13 @@ from django.template.response import TemplateResponse
 
 # def index(request):
 #     return render(request, 'index.html')
+
+# def index(request):  # для блока if
+#     data = {
+#         'n': -5
+#     }
+#     return render(request, 'index.html', context=data)
+
+# def index(request):
+#     country = ['Ukraine', 'Franch', 'England', 'USA', 'Germany', 'China']
+#     return render(request, 'index.html', context={'test': country})
