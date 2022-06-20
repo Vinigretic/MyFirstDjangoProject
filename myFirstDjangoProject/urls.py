@@ -88,6 +88,10 @@ from django.views.generic import TemplateView
 #     path('', views_firstapp.index)
 # ]
 
+# urlpatterns = [
+#     path('', TemplateView.as_view(template_name='index.html'))
+# ]
+
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='index.html'))
+    path('', views_firstapp.index)
 ]
