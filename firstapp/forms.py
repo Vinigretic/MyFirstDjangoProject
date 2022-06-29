@@ -16,12 +16,16 @@ from django import forms
 #     numb = forms.FloatField()
 #     list1 = forms.ChoiceField(choices=((1, 'Kharkiv'), (2, 'Kyiv'), (3, 'Lviv')))
 
-class UserForm(forms.Form):
-    name = forms.CharField(label='What is your name stranger', initial='name', help_text=' Input name here')
-    age = forms.IntegerField(initial=18, help_text='Input age here')
-    comment = forms.CharField(label='Комментарий', widget=forms.Textarea, initial='Please type your comment',
-                              help_text='Input comment here')
-    field_order = ['age', 'name', 'comment']
+# class UserForm(forms.Form):
+#     name = forms.CharField(label='What is your name stranger', initial='name', help_text=' Input name here')
+#     age = forms.IntegerField(initial=18, help_text='Input age here')
+#     comment = forms.CharField(label='Комментарий', widget=forms.Textarea, initial='Please type your comment',
+#                               help_text='Input comment here')
+#     field_order = ['age', 'name', 'comment']
+
+
+
+
 
 
 

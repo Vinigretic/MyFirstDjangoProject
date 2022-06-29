@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.template.response import TemplateResponse
-from .forms import UserForm
+# from .forms import UserForm
 
 
 # def index(request):
@@ -125,11 +125,11 @@ from .forms import UserForm
 #     userform = UserForm()
 #     return render(request, 'index.html', {'form': userform})
 
-def index(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        age = request.POST.get('age')
-        return HttpResponse(f'Hello {name}, I am {age}')
-    else:
-        userform = UserForm()
-        return render(request, 'index.html', {'form': userform})
+# def index(request):
+#     if request.method == 'POST':
+#         name = request.POST.get('name')
+#         age = request.POST.get('age')
+#         return HttpResponse(f'Hello {name}, I am {age}')
+#     else:
+#         userform = UserForm()
+#         return render(request, 'index.html', {'form': userform})

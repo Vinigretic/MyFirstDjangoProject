@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User account</title>
+</head>
+<body>
+    <h2>Пожалуйста авторизуйтесь</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ account }}
+        <input type="submit" value="send">
+    </form>
+</body>
+</html>

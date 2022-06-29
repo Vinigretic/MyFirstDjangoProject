@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color</title>
+</head>
+<body>
+    <ul>
+        <li>{{ model }}</li>
+        <li>{{ year }}</li>
+        <li>{{ color_car }}</li>
+    </ul>
+    <div>
+        <form>
+            {% csrf_token %}
+            {{ colorform }}
+            <input type="submit" value="send">
+        </form>
+    </div>
+</body>
+</html>

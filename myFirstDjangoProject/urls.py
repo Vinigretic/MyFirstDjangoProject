@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from firstapp import views as views_firstapp # импорт из приложения
 from shops import views as views_shops
+from cars import views as views_cars
 
 
 from django.views.generic import TemplateView
@@ -92,6 +93,13 @@ from django.views.generic import TemplateView
 #     path('', TemplateView.as_view(template_name='index.html'))
 # ]
 
+# urlpatterns = [
+#     path('', views_firstapp.index)
+# ]
+
 urlpatterns = [
-    path('', views_firstapp.index)
+    path('', views_cars.account),
+    path('about/', views_cars.about),
+    path('model/', views_cars.models),
+    path('admin/', admin.site.urls)
 ]

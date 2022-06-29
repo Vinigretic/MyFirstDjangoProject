@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'firstapp.apps.FirstappConfig',
     'shops.apps.ShopsConfig',
     'user.apps.UserConfig',
+    'cars.apps.CarsConfig',
 ]
 
 MIDDLEWARE = [

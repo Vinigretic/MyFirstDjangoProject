@@ -26,7 +26,7 @@
 # HiddenInput - генерирует скрытое поле <input type='hidden'>
 # MultipleHiddenInput - генерирует набор скрытых полей <input type='hidden'>
 # TextInput - генерирует однострочное текстовое поле
-# TextArea - генерирует многострочное текствое поле <textarea></textarea>
+# Textarea - генерирует многострочное текствое поле <textarea></textarea>
 # RadioSelect - генерирует список переключателей(радиокнопок) <input type='radio'>
 # CheckboxSelectMultiple - генерирует список флажков(чекбоксов) <input type='checkbox'>
 # TimeInput - генерирует поле для ввода времени
@@ -76,4 +76,14 @@
 #         </div>
 #         <input type="submit" value="send">
 # </form>
+
+
+# 1) Create new app "cars".
+# 2) Create 3 HTML page.
+# 3) Create 3 forms.
+# For 2 forms use widgets (The widget should be used at least three times, in which forms it does not matter.)
+# 4) Create urls structure.
+# 5) Create super-user
+
+
 
