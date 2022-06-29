@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
 from django.template.response import TemplateResponse
-# from .forms import UserForm
+from .forms import UserForm
 
 
 # def index(request):
@@ -133,3 +133,17 @@ from django.template.response import TemplateResponse
 #     else:
 #         userform = UserForm()
 #         return render(request, 'index.html', {'form': userform})
+
+def index(request):
+    if request.method == 'POST':
+        userform = UserForm(request.POST)
+        if userform.is_valid():
+            name = userform.cleaned_data['name']
+            age = userform.cleaned_data['age']
+            email = userform.cleaned_data['email']
+            return HttpResponse(f'{name}, {age}, {email}')
+        else:
+            return HttpResponse('Invalid data')
+    else:
+        userform = UserForm()
+        return render(request, 'index.html', {'form': userform})

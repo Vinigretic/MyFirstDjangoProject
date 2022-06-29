@@ -93,13 +93,13 @@ from django.views.generic import TemplateView
 #     path('', TemplateView.as_view(template_name='index.html'))
 # ]
 
-# urlpatterns = [
-#     path('', views_firstapp.index)
-# ]
-
 urlpatterns = [
-    path('', views_cars.account),
-    path('about/', views_cars.about),
-    path('model/', views_cars.models),
-    path('admin/', admin.site.urls)
+    path('', views_firstapp.index)
 ]
+
+# urlpatterns = [
+#     path('', views_cars.account),
+#     path('about/', views_cars.about),
+#     path('model/', views_cars.models),
+#     path('admin/', admin.site.urls)
+# ]

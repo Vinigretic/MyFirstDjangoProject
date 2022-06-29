@@ -23,6 +23,11 @@ from django import forms
 #                               help_text='Input comment here')
 #     field_order = ['age', 'name', 'comment']
 
+class UserForm(forms.Form):
+    name = forms.CharField(label='name', required=False, min_length=4, max_length=20)
+    age = forms.IntegerField(label='age', min_value=1, max_value=100)
+    email = forms.EmailField(label='email', required=False)
+
 
 
 

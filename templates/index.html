@@ -115,3 +115,17 @@
 <!--</body>-->
 <!--</html>-->
 
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="send">
+    </form>
+</body>
+</html>
