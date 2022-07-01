@@ -134,16 +134,26 @@ from .forms import UserForm
 #         userform = UserForm()
 #         return render(request, 'index.html', {'form': userform})
 
+# def index(request):
+#     if request.method == 'POST':
+#         userform = UserForm(request.POST)
+#         if userform.is_valid():
+#             name = userform.cleaned_data['name']
+#             age = userform.cleaned_data['age']
+#             email = userform.cleaned_data['email']
+#             return HttpResponse(f'{name}, {age}, {email}')
+#         else:
+#             return HttpResponse('Invalid data')
+#     else:
+#         userform = UserForm()
+#         return render(request, 'index.html', {'form': userform})
+
 def index(request):
-    if request.method == 'POST':
-        userform = UserForm(request.POST)
-        if userform.is_valid():
-            name = userform.cleaned_data['name']
-            age = userform.cleaned_data['age']
-            email = userform.cleaned_data['email']
-            return HttpResponse(f'{name}, {age}, {email}')
-        else:
-            return HttpResponse('Invalid data')
+    if request.method == "POST":
+        name = request.POST.get('name')
+        age = request.POST.get('age')
+        return HttpResponse(f'{name}, {age}')
     else:
         userform = UserForm()
         return render(request, 'index.html', {'form': userform})
+

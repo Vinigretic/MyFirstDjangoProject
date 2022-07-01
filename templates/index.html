@@ -115,16 +115,71 @@
 <!--</body>-->
 <!--</html>-->
 
+<!--<!DOCTYPE html>-->
+<!--<html lang= "en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>User</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <form method="POST" novalidate>-->
+<!--        {% csrf_token %}-->
+<!--        {{ form }}-->
+<!--        <input type="submit" value="send">-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang= "en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Django forms</title>-->
+<!--    <style>-->
+<!--        .alert{color:red;}-->
+<!--        .form-group{margin:10px 0;}-->
+<!--        .form-group input{width: 250px; height: 25px; border-radius: 3px;}-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body class="container">-->
+<!--    <form method="POST" novalidate>-->
+<!--        {% csrf_token %}-->
+<!--        <div>-->
+<!--            {% for field in form %}-->
+<!--            <div class="form-group">-->
+<!--                {{ field.label_tag }}-->
+<!--                <div>{{ field }}</div>-->
+<!--                {% if field.errors %}-->
+<!--                {% for error in field.errors %}-->
+<!--                <div class="alert alert-danger">-->
+<!--                    {{ error }}-->
+<!--                </div>-->
+<!--                {% endfor %}-->
+<!--                {% endif %}-->
+<!--            </div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--        <input type="submit" value="send">-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang= "en">
 <head>
     <meta charset="UTF-8">
-    <title>User</title>
+    <title>Django forms</title>
+    <style>
+        .field{font-weiget: bold;}
+        .error{color:red;}
+    </style>
 </head>
-<body>
+<body class="container">
     <form method="POST" novalidate>
         {% csrf_token %}
-        {{ form }}
+        <table>
+            {{ form }}
+        </table>
         <input type="submit" value="send">
     </form>
 </body>
