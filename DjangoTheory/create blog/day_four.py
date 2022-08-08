@@ -8,6 +8,10 @@
 # Поле created создается очень часто, так как удобно отслеживать и сортировать по дате и времени созднания обьектов
 # Модель Comments имеет связи с моделью User и Post один ко многим
 
+# Модель Comments имеет связь с моделями User и Post один ко многим.
+# Для создания этой звязи в модели Comments создаем два внешних ключа, в моделях  UserSerializer  и  PostSerializer
+# так же создаем связи с id модели Comments.
+#
 # Опишем два внешних ключа для связи с другими таблицами
 # owner = models.ForeignKey('auth.User', related_name='comments', on_delete=models.CASCADE)
 # post = models.ForeignKey('Post', related_name='comments', on_delete=models.CASCADE)
@@ -34,7 +38,37 @@
 #         model = Comments
 #         fields = ['id', 'body', 'owner', 'post']
 
-# 3. Создаем views. Описываем поля.
+# 3. Добавляем связи в необходимые модели в сериалайзере
+# Связываем нашу модель Commends с UserSerializer
+#
+# comments = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+#
+# Передаем эту переменную в обработку полей сериалайзера
+#
+# fields = ['id', 'username', 'first_name', 'last_name', 'posts', 'comments']
+#
+# class UserSerializer(serializers.ModelSerializer):
+#     posts = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+#     comments = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+#
+#
+#     class Meta:
+#         model = User
+#         fields = ['id', 'username', 'first_name', 'last_name', 'posts', 'comments']
+#
+# Связываем нашу модель Commends с PostSerializer
+#
+# class PostSerializer(serializers.ModelSerializer):
+#     owner = serializers.ReadOnlyField(source='owner.username')
+#     comments = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+#
+#
+#     class Meta:
+#         model = Post
+#         fields = ['id', 'title', 'body', 'owner', 'comments']
+
+
+# 4. Создаем views. Описываем поля.
 
 # from .models import Post, Comments - импортируем модель Comments
 #
@@ -62,6 +96,7 @@
 #     serializer_class = serializers.CommentsSerializer
 #     permission_classes = [permissions.IsAuthenticatedOrReadOnly, CheckOwner]
 
+
 # 4. Описываем url для Comments
 
 # urlpatterns = [
@@ -72,3 +107,4 @@
 #     path('comments/', views.CommentsList.as_view()),
 #     path('comments/<int:pk>/', views.CommentsDetail.as_view()),
 # ]
+

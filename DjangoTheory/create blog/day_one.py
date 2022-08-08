@@ -3,13 +3,16 @@
 # 2. Создаем виртуальное окружение
 # 3. Инсталируем django проект
 # pip install django
+# Обязательно после этого проверить что виртуальное окружение подключилось и django установилось, это можно проверить
+# в settings. Если оно не подключилось его нужно подключать вручную через терминал с помощью команды
+# .\venv\Scripts\activate.
 # 4.Создаем приложение для API
 # python manage.py startapp api
 # 5. Делаем миграции
 # python manage.py migrate
 # 6. Создаем суперюзера
 # python manage.py createsuperuser
-# 7.Скачиваем rest framefork
+# 7.Скачиваем rest framework
 # pip install djangorestframework
 # 8.Подключаем в settings REST и приложение api
 # INSTALLED_APPS = [
@@ -61,6 +64,11 @@
 # Класс Мета является обязательным при описании serializer
 # в model - передаем название модели которую используем
 # fields - передаем поля которые будут обрабатываться
+# fields может быть задан в виде списка либо кортежа (даже если поле одно) или строки __all__.
+# с помощью строки __all__ мы передадим в обработку все поля
+# fields = '__all__'
+# exclude - в нее передаем поля которые следует исключить из обработки
+# Переменую fields и exclude нельзя использовать в одном классе
 #
 # class UserSerializer(serializers.ModelSerializer):
 #     class Meta:
@@ -80,11 +88,11 @@
 
 # from . import serializers - импорт созданного файла serializer во views
 
-# from django.contrib.auth.models import User - импорт встроенного класса(модель)
+# from django.contrib.auth.models import User - импорт передаем serializer который обрабатывает нужную модельвстроенного класса(модель)
 
 # Описываем views которая отображает список users и наследуется от generics.ListAPIView
-# Переменная queryset (постоянная) забирает набор данных из модели User
-# Переменная serializer_class (постоянная) - передаем serializer который обрабатывает нужную модель
+# Переменная queryset (переменная по стандарту) забирает набор данных из модели User
+# Переменная serializer_class (переменная по стандарту) -
 #
 # class UserList(generics.ListAPIView):
 #     queryset = User.objects.all()
@@ -100,7 +108,8 @@
 # Описываем url для api
 # Делаем импорты
 
-# from django.urls import path импортируем path для url
+# from django.urls import path импортируем path для url - функция path создает элемент, который Django использует
+# для показа страницы приложения.
 
 # from rest_framework.urlpatterns import format_suffix_patterns мпортируем из rest_framework.urlpatterns суфиксы
 # По стандарту DRY мы должны использовать патерны суфиксов для url
@@ -115,8 +124,22 @@
 #     path('users/<int:pk>/', views.UserDetail.as_view())
 # ]
 
-# Приводим url к формату DRY
+# Приводим url к формату DRY(Don't repeat youself)
 # urlpatterns = format_suffix_patterns(urlpatterns)
+
+# format_suffix_patterns - может принимать три аргумента
+# format_suffix_patterns(urlpatterns, suffix_required=False, allowed=None)
+# Аргументы
+# urlpatterns : Требуется. Список шаблонов URL.
+#
+# suffix_required : Необязательный. Булево значение, указывающее, должны ли суффиксы в URL быть необязательными
+# или обязательными. По умолчанию имеет значение False , что означает, что суффиксы по умолчанию необязательны.
+#
+# allowed : Необязательно. Список или кортеж допустимых суффиксов формата. Если он не указан, будет использован
+# шаблон суффикса формата.
+
+# format_suffix_patterns не поддерживает спуск по шаблонам URL include.
+
 
 # Опсываем url для проекта
 #
@@ -130,3 +153,4 @@
 #     path('admin/', admin.site.urls),
 #     path('', include('api.urls'))
 # ]
+
