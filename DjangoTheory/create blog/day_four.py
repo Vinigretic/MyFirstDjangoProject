@@ -39,6 +39,9 @@
 #         fields = ['id', 'body', 'owner', 'post']
 
 # 3. Добавляем связи в необходимые модели в сериалайзере
+
+# from .models import Post, Comments импортируем модель Comments
+
 # Связываем нашу модель Commends с UserSerializer
 #
 # comments = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
