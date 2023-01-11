@@ -103,15 +103,15 @@
 # review.reviews_set.all - обращаемся к отзывам и вызываем метод reviews_set.all - получая все отзывы которые завязаны на отзыве
 # проходим циклом и выводим имена и текст отзывов
 
-# {% for rew in review.reviews_set.all %}
-#     <div class="media mt-5 editContent">
-#         <a class="pr-3" href="#">
-#             <img src="{% static 'images/te2.jpg' %}" class="img-fluid "
-#                  alt="image">
-#         </a>
-#         <div class="media-body">
-#             <h5 class="mt-0 editContent">{{ rew.name }}</h5>
-#             <p class="mt-2 editContent">{{ rew.text }}</p>
-#         </div>
-#     </div>
-# {% endfor %}
+{% for rew in review.reviews_set.all %}
+    <div class="media mt-5 editContent">
+        <a class="pr-3" href="#">
+            <img src="{% static 'images/te2.jpg' %}" class="img-fluid "
+                 alt="image">
+        </a>
+        <div class="media-body">
+            <h5 class="mt-0 editContent">{{ rew.name }}</h5>
+            <p class="mt-2 editContent">{{ rew.text }}</p>
+        </div>
+    </div>
+{% endfor %}

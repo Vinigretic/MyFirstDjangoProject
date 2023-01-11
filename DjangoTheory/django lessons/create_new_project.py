@@ -20,6 +20,5 @@
 # from firstapp import views as views_firstapp
 # from shops import views as views_shops
 
-# URL - одна на весь проект
 
 # 4. Views описываем отдельно, в каждом приложении своя

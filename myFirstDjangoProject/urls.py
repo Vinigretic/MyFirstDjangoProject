@@ -103,3 +103,4 @@ urlpatterns = [
 #     path('model/', views_cars.models),
 #     path('admin/', admin.site.urls)
 # ]
+

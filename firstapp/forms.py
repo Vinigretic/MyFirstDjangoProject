@@ -31,9 +31,8 @@ from django import forms
 class UserForm(forms.Form):
     name = forms.CharField(min_length=3, max_length=20)
     age = forms.IntegerField(min_value=18, max_value=100)
-    request_css_class = 'field'
-    error_css_class = 'error'
-
+#     request_css_class = 'field'
+#     error_css_class = 'error'
 
 
 

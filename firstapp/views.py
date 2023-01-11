@@ -4,6 +4,7 @@ from django.template.response import TemplateResponse
 from .forms import UserForm
 
 
+
 # def index(request):
 #     return HttpResponse('<h2>Главная страница</h2>')
 #
@@ -148,12 +149,47 @@ from .forms import UserForm
 #         userform = UserForm()
 #         return render(request, 'index.html', {'form': userform})
 
-def index(request):
-    if request.method == "POST":
-        name = request.POST.get('name')
-        age = request.POST.get('age')
-        return HttpResponse(f'{name}, {age}')
-    else:
-        userform = UserForm()
-        return render(request, 'index.html', {'form': userform})
+# def index(request):
+#     if request.method == "POST":
+#         name = request.POST.get('name')
+#         age = request.POST.get('age')
+#         return HttpResponse(f'{name}, {age}')
+#     else:
+#         userform = UserForm()
+#         return render(request, 'index.html', {'form': userform})
+
+# def index(request):
+#     if request.method == 'POST':
+#         userform = UserForm(request.POST)
+#         if userform.is_valid():
+#             # print(userform.cleaned_data)
+#             name = userform.cleaned_data['name']
+#             age = userform.cleaned_data['age']
+#             return HttpResponse(f'{name}, {age}')
+#         else:
+#             return HttpResponse('Invalid data')
+#     else:
+#         userform = UserForm()
+#         return render(request, 'index.html', {'form': userform})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
